@@ -2,7 +2,13 @@
   <div class="inner">
     <div class="site-header-content">
       <h1 class="site-title">{{ if .Site.Params.logo }}
+        {{ if .Site.Params.LogoLink }}
+        <a rel="nofollow" href="{{ .Site.Params.LogoLink }}">
+        {{end}}
         <img class="site-logo" src="{{ .Site.Params.logo  | absURL}}" alt="{{ .Site.Params.title }}" />
+        {{ if .Site.Params.LogoLink }}
+        </a>
+        {{end}}
       {{else}} {{ .Site.Params.title }} {{end}} </h1>
         <h2 class="site-description">{{ .Site.Params.subtitle }} </h2>
     </div>
